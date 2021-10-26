@@ -1,6 +1,6 @@
-import arrumando_listas 
-import palavras
-def anagrama(palavra):
+import request
+
+def criarAnagrama(palavra):
     num=len(palavra)
     l1=[]
     palavra=str(palavra)
@@ -19,23 +19,12 @@ def anagrama(palavra):
             l2.add(juntar)
     return(l2)
 
-def arquivoparalista(arquivo):
-    arq=open(arquivo, 'r')
-    palavras=[]
-    for x in arq:
-       palavras+=[arq.readlines()]
-    arq.close()
-    return palavras
+def encontrarAnagrama(palavras):
+    listaDePalavras = []
+    for palavra in palavras:
+        encontrar =   request.retornaPalavra(palavra)
+        if (encontrar):
+            listaDePalavras.append(encontrar)
+    return listaDePalavras
 
-def encontraranagrama(anagrama, lista):
-    palavrasexistentes=[]
-    for x in anagrama:
-        if x in lista:
-            palavrasexistentes+=[x]
-    return palavrasexistentes
-
-#lista ja foi transformada em lista no final
-
-l1=arrumando_listas.stremlista(palavras.lista)
-lista=arrumando_listas.arrumandopalavras(l1)
 

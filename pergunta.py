@@ -1,3 +1,8 @@
-import anagrama
-x=input('qual palavra\n')
-print('Os anagramas existentes são:\n',anagrama.encontraranagrama(anagrama.anagrama(x),anagrama.lista),'\nTodos são:\n',anagrama.anagrama(x))
+from anagrama import criarAnagrama, encontrarAnagrama
+
+palavra=input('qual palavra\n')
+
+anagramas = criarAnagrama(palavra)
+encontros =  encontrarAnagrama(anagramas)
+
+print('Os anagramas existentes são:\n',', '.join(encontros),'\nTodos são:\n',', '.join(anagramas))
